@@ -1,6 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent">
+
+    <TextView
+        android:id="@+id/tv_today"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_centerVertical="true"
+        android:layout_margin="10dp"
+        android:text="Today"
+        android:textSize="16sp"/>
+
+    <ImageView
+        android:id="@+id/iv_sun"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_stat_name"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
+
+    <TextView
+        android:id="@+id/tv_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Location"
+        android:textSize="16sp"
+        android:layout_margin="5dp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_today"/>
+
+    <TextView
+        android:id="@+id/tv_degrees"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Degrees"
+        android:textSize="16sp"
+        android:layout_margin="5dp"/>
+
+        <View
+            android:layout_width="150dp"
+            android:layout_height="1dp"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:background="@android:color/darker_gray"/>
+
+        <ImageView
+            android:id="@+id/backImageView"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_lighticons_09"
+            app:layout_constraintStart_toStartOf="linearLayout"
+            app:layout_constraintTop_toTopOf="linearLayout"/>
+
+    </LinearLayout>
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
