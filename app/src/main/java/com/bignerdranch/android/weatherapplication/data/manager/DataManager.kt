@@ -8,6 +8,6 @@ interface DataManager {
 
     fun getStringFromResources(@StringRes resId: Int): String
 
-    fun getCountry(): Single<List<Country>>
+    fun getCountry(): List<Country>
 
 }

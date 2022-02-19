@@ -1,4 +1,4 @@
-package com.bignerdranch.android.weatherapplication.common.dagger
+package com.bignerdranch.android.weatherapplication.common.di
 
 import dagger.Module
 import dagger.hilt.InstallIn

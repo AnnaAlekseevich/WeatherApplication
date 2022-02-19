@@ -1,6 +1,7 @@
 package com.bignerdranch.android.weatherapplication.data.manager
 
 import android.content.Context
+import android.util.Log
 import com.bignerdranch.android.weatherapplication.R
 import com.bignerdranch.android.weatherapplication.common.util.CountryUtils
 import com.bignerdranch.android.weatherapplication.data.models.Country
@@ -15,16 +16,24 @@ class DataManagerImpl(private val context: Context, private val gson: Gson): Dat
         return context.getString(resId)
     }
 
-    override fun getCountry(): Single<List<Country>> {
-        return Single.just(getCountryData())
+    override fun getCountry(): List<Country> {
+        return getCountryData()
     }
 
     private fun getCountryData(): List<Country>{
         val countryStubList = mutableListOf<Country>()
-        for (i in countriesImages[0]..countriesImages.size){
+
+        for (i in countriesImages.indices){
+            Log.d("CheckProblem", "i = $i")
             countryStubList.add(i, (Country(countryName = countriesNames[i], capitalName = capitalsNames[i], imageResId = countriesImages[i])))
         }
-        return listOf()
+        Log.d("CheckProblem", "countriesImages.size = ${countriesImages.size}")
+        Log.d("CheckProblem", "countriesImages[0] = ${countriesImages[0]}")
+        Log.d("CheckProblem", "countriesImages = $countriesImages")
+        Log.d("CheckProblem", "countriesNames = $countriesNames")
+        Log.d("CheckProblem", "capitalsNames = $capitalsNames")
+        Log.d("CheckProblem", "countryStubList = $countryStubList")
+        return countryStubList
     }
 
     private val countriesImages: List<Int>

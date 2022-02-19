@@ -1,4 +1,4 @@
-package com.bignerdranch.android.weatherapplication.common.dagger
+package com.bignerdranch.android.weatherapplication.common.di
 
 import android.content.Context
 import com.bumptech.glide.GlideBuilder

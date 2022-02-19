@@ -1,5 +1,6 @@
 package com.bignerdranch.android.weatherapplication.ui.fragments
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import com.bignerdranch.android.weatherapplication.data.models.Country
 import com.bignerdranch.android.weatherapplication.data.repositories.country.CountryRepository
@@ -9,17 +10,15 @@ import javax.inject.Inject
 @HiltViewModel
 class CountriesViewModel @Inject constructor(private val repository: CountryRepository): BaseViewModel() {
 
-//    var model: Country
-//
-//    init {
-//        loadCountry()
-//    }
-//
-//    private fun loadCountry(function: (() -> Unit)? = null) {
-//        processTask(repository.loadCountry().subscribeWith(simpleSingleObserver {
-//            model.set(it)
-//            function?.invoke()
-//        }))
-//    }
+    val listData = repository.loadCountry()
+
+    fun checkData(){
+        Log.d("CheckProblem", "loadCountry() = ${repository.loadCountry()}")
+    }
+
+
+
+
+
 
 }

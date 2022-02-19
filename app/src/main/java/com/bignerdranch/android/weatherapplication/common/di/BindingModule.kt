@@ -1,4 +1,4 @@
-package com.bignerdranch.android.weatherapplication.common.dagger
+package com.bignerdranch.android.weatherapplication.common.di
 
 import com.bignerdranch.android.weatherapplication.data.repositories.country.CountryRepository
 import com.bignerdranch.android.weatherapplication.data.repositories.country.CountryRepositoryImpl

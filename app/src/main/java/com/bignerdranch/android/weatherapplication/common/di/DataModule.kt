@@ -1,8 +1,11 @@
-package com.bignerdranch.android.weatherapplication.common.dagger
+package com.bignerdranch.android.weatherapplication.common.di
 
 import android.content.Context
+import com.bignerdranch.android.weatherapplication.common.db.DataBaseHelper
 import com.bignerdranch.android.weatherapplication.data.manager.DataManager
 import com.bignerdranch.android.weatherapplication.data.manager.DataManagerImpl
+import com.bignerdranch.android.weatherapplication.data.repositories.country.CacheCountryDataStore
+import com.bignerdranch.android.weatherapplication.data.repositories.country.CacheCountryDataStoreImpl
 import com.google.gson.Gson
 import dagger.Module
 import dagger.Provides
@@ -23,5 +26,7 @@ object DataModule {
 
     @Provides
     fun provideGson() = Gson()
+
+
 
 }

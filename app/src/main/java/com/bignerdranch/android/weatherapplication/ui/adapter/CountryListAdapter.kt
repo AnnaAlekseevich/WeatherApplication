@@ -23,7 +23,7 @@ class CountryListAdapter() :
         private val binding = ItemCountryBinding.bind(itemView)
 
         fun updateCountry(country: Country) {
-//            binding.imageView.setImageDrawable(country.drawableFlag)
+            binding.imageView.setImageResource(country.imageResId)
             binding.tvCountry.text = country.countryName
             binding.tvCapital.text = country.capitalName
 
