@@ -58,15 +58,6 @@
             android:layout_margin="5dp"
             android:background="@android:color/darker_gray"/>
 
-        <ImageView
-            android:id="@+id/backImageView"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_centerVertical="true"
-            android:src="@drawable/ic_lighticons_09"
-            app:layout_constraintStart_toStartOf="linearLayout"
-            app:layout_constraintTop_toTopOf="linearLayout"/>
-
     </LinearLayout>
 
 

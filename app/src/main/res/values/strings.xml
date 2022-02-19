@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">WeatherApplication</string>
+    <string name="country">Country</string>
+    <string name="capital">Capital</string>
+    <string name="time">Time</string>
+    <string name="country_Germany">Germany</string>
+    <string name="country_Austria">Austria</string>
+    <string name="country_France">France</string>
+    <string name="country_Italy">Italy</string>
+    <string name="country_Switzerland">Switzerland</string>
+    <string name="capital_Germany">Berlin</string>
+    <string name="capital_Austria">Vienna</string>
+    <string name="capital_France">Paris</string>
+    <string name="capital_Italy">Rome</string>
+    <string name="capital_Switzerland">Bern</string>
 </resources>
