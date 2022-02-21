@@ -31,9 +31,10 @@ class CountriesListFragment : Fragment() {
         binding.cryptosRecyclerView.layoutManager = LinearLayoutManager(context)
         binding.cryptosRecyclerView.adapter = countryAdapter
 
-        Log.d("CheckProblem", "viewModel.listData = $viewModel.listData")
-        viewModel.checkData()
-        addCountry(viewModel.listData)
+
+        val list = viewModel.data
+        Log.d("CheckProblem", "viewModel.data = $list")
+//        addCountry(viewModel.listDataFromApi)
 
         return binding.root
     }

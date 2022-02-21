@@ -1,15 +1,22 @@
 package com.bignerdranch.android.weatherapplication.data.repositories.country
 
-import com.bignerdranch.android.weatherapplication.R
-import com.bignerdranch.android.weatherapplication.data.models.Country
+import android.util.Log
+import com.bignerdranch.android.weatherapplication.common.net.ApiCountry
+import com.bignerdranch.android.weatherapplication.data.models.CountryApi
+import io.reactivex.rxjava3.core.Single
+import io.reactivex.rxjava3.schedulers.Schedulers
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class RemoteCountryDataStoreImpl: RemoteCountryDataStore {
+@Singleton
+class RemoteCountryDataStoreImpl @Inject constructor(private val apiCountry: ApiCountry) :
+    RemoteCountryDataStore {
 
-    override fun get(): List<Country> {
-        val remoteCountryList = mutableListOf<Country>()
-        remoteCountryList.add(Country("Belarus", "Minsk", R.drawable.ic_flag_unknown))
-        remoteCountryList.add(Country("Russia", "Moscow", R.drawable.ic_flag_unknown))
-        return remoteCountryList
+    override fun get(): Single<List<CountryApi>> {
+
+        return apiCountry.getCountries()
+            .subscribeOn(Schedulers.io())
+
     }
 
 }

@@ -13,4 +13,7 @@
     <string name="capital_France">Paris</string>
     <string name="capital_Italy">Rome</string>
     <string name="capital_Switzerland">Bern</string>
+    <string name="btn_button_one">One</string>
+    <string name="btn_button_two">Two</string>
+    <string name="btn_button_three">Three</string>
 </resources>

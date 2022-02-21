@@ -24,15 +24,8 @@ class DataManagerImpl(private val context: Context, private val gson: Gson): Dat
         val countryStubList = mutableListOf<Country>()
 
         for (i in countriesImages.indices){
-            Log.d("CheckProblem", "i = $i")
             countryStubList.add(i, (Country(countryName = countriesNames[i], capitalName = capitalsNames[i], imageResId = countriesImages[i])))
         }
-        Log.d("CheckProblem", "countriesImages.size = ${countriesImages.size}")
-        Log.d("CheckProblem", "countriesImages[0] = ${countriesImages[0]}")
-        Log.d("CheckProblem", "countriesImages = $countriesImages")
-        Log.d("CheckProblem", "countriesNames = $countriesNames")
-        Log.d("CheckProblem", "capitalsNames = $capitalsNames")
-        Log.d("CheckProblem", "countryStubList = $countryStubList")
         return countryStubList
     }
 
