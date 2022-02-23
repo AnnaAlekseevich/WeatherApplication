@@ -6,7 +6,7 @@ import retrofit2.http.GET
 
 interface ApiCountry {
 
-    @GET("v3.1/all?fields=name,capital,flags")
+    @GET("v3.1/all?fields=name,capital,flags,timezones")
     fun getCountries(): Single<List<CountryApi>>
 
 }

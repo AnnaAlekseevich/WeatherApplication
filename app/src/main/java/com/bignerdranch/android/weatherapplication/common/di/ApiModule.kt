@@ -1,9 +1,6 @@
 package com.bignerdranch.android.weatherapplication.common.di
 
-import com.bignerdranch.android.weatherapplication.common.db.DataBaseHelper
 import com.bignerdranch.android.weatherapplication.common.net.ApiCountry
-import com.bignerdranch.android.weatherapplication.data.repositories.country.CacheCountryDataStore
-import com.bignerdranch.android.weatherapplication.data.repositories.country.CacheCountryDataStoreImpl
 import com.bignerdranch.android.weatherapplication.data.repositories.country.RemoteCountryDataStore
 import com.bignerdranch.android.weatherapplication.data.repositories.country.RemoteCountryDataStoreImpl
 import com.google.gson.GsonBuilder
@@ -15,7 +12,6 @@ import hu.akarnokd.rxjava3.retrofit.RxJava3CallAdapterFactory
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 

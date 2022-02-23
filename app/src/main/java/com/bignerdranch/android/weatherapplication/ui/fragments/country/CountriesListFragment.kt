@@ -1,14 +1,14 @@
-package com.bignerdranch.android.weatherapplication.ui.fragments
+package com.bignerdranch.android.weatherapplication.ui.fragments.country
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.bignerdranch.android.weatherapplication.data.models.Country
+import com.bignerdranch.android.weatherapplication.R
 import com.bignerdranch.android.weatherapplication.data.models.CountryApi
 import com.bignerdranch.android.weatherapplication.databinding.FragmentCountriesListBinding
 import com.bignerdranch.android.weatherapplication.ui.adapter.CountryItemClickListener
@@ -33,7 +33,6 @@ class CountriesListFragment : Fragment(), CountryItemClickListener {
         binding.cryptosRecyclerView.adapter = countryAdapter
 
         viewModel.countriesList.observe(viewLifecycleOwner) { list ->
-            Log.d("CheckProblem", "list in fragment = $list")
             addCountry(list)
         }
 
@@ -45,7 +44,9 @@ private fun addCountry(countries: List<CountryApi>) {
 }
 
     override fun onCountryClicked(country: CountryApi) {
-        Log.d("CheckClick", "onCountryClicked")
+        findNavController().navigate(
+            R.id.action_countriesListFragment_to_weatherFragment
+        )
     }
 
 }

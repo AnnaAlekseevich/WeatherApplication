@@ -11,6 +11,9 @@ data class CountryApi(
     val countryName: CountryName,
 
     @SerializedName("flags")
-    val flagUrl: Flag
+    val flagUrl: Flag,
+
+    @SerializedName("timezones")
+    val timezones: List<String>
 
 )

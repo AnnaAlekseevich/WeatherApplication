@@ -1,9 +1,10 @@
-package com.bignerdranch.android.weatherapplication.ui.fragments
+package com.bignerdranch.android.weatherapplication.ui.fragments.country
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.bignerdranch.android.weatherapplication.data.models.CountryApi
 import com.bignerdranch.android.weatherapplication.data.repositories.country.CountryRepository
+import com.bignerdranch.android.weatherapplication.ui.fragments.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import javax.inject.Inject

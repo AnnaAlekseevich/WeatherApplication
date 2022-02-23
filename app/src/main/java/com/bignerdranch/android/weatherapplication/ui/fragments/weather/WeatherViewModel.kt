@@ -1,4 +1,6 @@
 package com.bignerdranch.android.weatherapplication.ui.fragments.weather
 
-class WeatherViewModel {
+import com.bignerdranch.android.weatherapplication.ui.fragments.BaseViewModel
+
+class WeatherViewModel: BaseViewModel() {
 }

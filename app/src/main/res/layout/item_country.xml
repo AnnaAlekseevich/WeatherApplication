@@ -22,7 +22,7 @@
         android:layout_gravity="center"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toStartOf="@+id/priceText"
+        app:layout_constraintEnd_toStartOf="@+id/tv_time_zone"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="@+id/imageView"
@@ -50,7 +50,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/priceText"
+        android:id="@+id/tv_time_zone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center|right"

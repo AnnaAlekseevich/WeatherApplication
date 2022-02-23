@@ -28,6 +28,7 @@ class CountryListAdapter(val countryItemClickListener: CountryItemClickListener)
             binding.imageView.setImageURI(country.flagUrl.flagURL.toUri())
             binding.tvCountry.text = country.countryName.name
             binding.tvCapital.text = country.capitalName.toString()
+            binding.tvTimeZone.text = country.timezones.toString()
 
             country.flagUrl.flagURL.toUri().let {
                 Glide
