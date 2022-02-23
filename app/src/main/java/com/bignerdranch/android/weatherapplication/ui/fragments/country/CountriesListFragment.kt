@@ -9,7 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bignerdranch.android.weatherapplication.R
-import com.bignerdranch.android.weatherapplication.data.models.CountryApi
+import com.bignerdranch.android.weatherapplication.data.models.CountryResponseData
 import com.bignerdranch.android.weatherapplication.databinding.FragmentCountriesListBinding
 import com.bignerdranch.android.weatherapplication.ui.adapter.CountryItemClickListener
 import com.bignerdranch.android.weatherapplication.ui.adapter.CountryListAdapter
@@ -39,13 +39,20 @@ class CountriesListFragment : Fragment(), CountryItemClickListener {
         return binding.root
     }
 
-private fun addCountry(countries: List<CountryApi>) {
+private fun addCountry(countries: List<CountryResponseData>) {
     countryAdapter?.addCountry(countries)
 }
 
-    override fun onCountryClicked(country: CountryApi) {
+    override fun onCountryClicked(country: CountryResponseData) {
+        val latitude = country.latlng[0]
+        val longitude = country.latlng[1]
+        val bundle: Bundle = Bundle(2)
+            .apply {
+                putString("latitude", latitude)
+                putString("longitude", longitude)
+            }
         findNavController().navigate(
-            R.id.action_countriesListFragment_to_weatherFragment
+            R.id.action_countriesListFragment_to_weatherFragment, bundle
         )
     }
 

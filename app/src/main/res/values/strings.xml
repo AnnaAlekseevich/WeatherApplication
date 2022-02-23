@@ -16,5 +16,5 @@
     <string name="btn_button_one">One</string>
     <string name="btn_button_two">Two</string>
     <string name="btn_button_three">Three</string>
-    <string name="weather">Weather</string>
+    <string name="weather">Current temperature</string>
 </resources>

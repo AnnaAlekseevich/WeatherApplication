@@ -2,7 +2,7 @@ package com.bignerdranch.android.weatherapplication.data.models
 
 import com.google.gson.annotations.SerializedName
 
-data class CountryApi(
+data class CountryResponseData(
 
     @SerializedName("capital")
     val capitalName: List<String>,
@@ -14,6 +14,9 @@ data class CountryApi(
     val flagUrl: Flag,
 
     @SerializedName("timezones")
-    val timezones: List<String>
+    val timezones: List<String>,
+
+    @SerializedName("latlng")
+    val latlng: List<String>
 
 )

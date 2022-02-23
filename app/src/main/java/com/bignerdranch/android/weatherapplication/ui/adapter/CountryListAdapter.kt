@@ -6,16 +6,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bignerdranch.android.weatherapplication.R
-import com.bignerdranch.android.weatherapplication.data.models.CountryApi
+import com.bignerdranch.android.weatherapplication.data.models.CountryResponseData
 import com.bignerdranch.android.weatherapplication.databinding.ItemCountryBinding
 import com.bumptech.glide.Glide
 
 class CountryListAdapter(val countryItemClickListener: CountryItemClickListener) :
     RecyclerView.Adapter<CountryListAdapter.MyViewHolder>() {
 
-    private val data = mutableListOf<CountryApi>()
+    private val data = mutableListOf<CountryResponseData>()
 
-    fun addCountry(countries: List<CountryApi>) {
+    fun addCountry(countries: List<CountryResponseData>) {
         data.addAll(countries)
         //todo notifyItemRangeInserted
         notifyDataSetChanged()
@@ -24,7 +24,7 @@ class CountryListAdapter(val countryItemClickListener: CountryItemClickListener)
     inner class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val binding = ItemCountryBinding.bind(itemView)
 
-        fun updateCountry(country: CountryApi) {
+        fun updateCountry(country: CountryResponseData) {
             binding.imageView.setImageURI(country.flagUrl.flagURL.toUri())
             binding.tvCountry.text = country.countryName.name
             binding.tvCapital.text = country.capitalName.toString()

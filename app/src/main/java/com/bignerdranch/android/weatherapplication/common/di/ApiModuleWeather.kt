@@ -1,8 +1,8 @@
 package com.bignerdranch.android.weatherapplication.common.di
 
-import com.bignerdranch.android.weatherapplication.common.net.ApiCountry
-import com.bignerdranch.android.weatherapplication.data.repositories.country.RemoteCountryDataStore
-import com.bignerdranch.android.weatherapplication.data.repositories.country.RemoteCountryDataStoreImpl
+import com.bignerdranch.android.weatherapplication.common.net.ApiWeather
+import com.bignerdranch.android.weatherapplication.data.repositories.weather.RemoteWeatherDataStore
+import com.bignerdranch.android.weatherapplication.data.repositories.weather.RemoteWeatherDataStoreImpl
 import com.google.gson.GsonBuilder
 import dagger.Module
 import dagger.Provides
@@ -17,9 +17,10 @@ import javax.inject.Singleton
 
 @InstallIn(SingletonComponent::class)
 @Module
-object ApiModule {
+object ApiModuleWeather {
 
-    fun getApiServiceCountry(): Retrofit {
+
+    fun getApiServiceWeather(): Retrofit {
 
         val builder = GsonBuilder()
         val httpClient = OkHttpClient.Builder()
@@ -27,7 +28,7 @@ object ApiModule {
         val logging = HttpLoggingInterceptor()
 
         return Retrofit.Builder()
-            .baseUrl("https://restcountries.com/")
+            .baseUrl("https://api.openweathermap.org/")
             .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
             .addConverterFactory(GsonConverterFactory.create(gson))
             .client(
@@ -44,12 +45,12 @@ object ApiModule {
     @JvmStatic
     @Singleton
     @Provides
-    fun provideApiCountry(): ApiCountry =
-        getApiServiceCountry().create(ApiCountry::class.java)
+    fun provideApiWeather(): ApiWeather =
+        getApiServiceWeather().create(ApiWeather::class.java)
 
     @Provides
-    fun getRemoteCountryDataStore(apiCountry: ApiCountry): RemoteCountryDataStore {
-        return RemoteCountryDataStoreImpl(apiCountry)
+    fun getRemoteWeatherDataStore(apiWeather: ApiWeather): RemoteWeatherDataStore {
+        return RemoteWeatherDataStoreImpl(apiWeather)
     }
 
 }

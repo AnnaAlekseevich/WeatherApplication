@@ -13,6 +13,12 @@
         <action
             android:id="@+id/action_countriesListFragment_to_weatherFragment"
             app:destination="@id/weatherFragment" />
+        <argument
+            android:name="latitude"
+            app:argType="string" />
+        <argument
+            android:name="longitude"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/weatherFragment"
