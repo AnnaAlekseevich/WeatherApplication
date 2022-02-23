@@ -1,34 +1,43 @@
 package com.bignerdranch.android.weatherapplication.ui.adapter
 
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bignerdranch.android.weatherapplication.R
+import com.bignerdranch.android.weatherapplication.data.models.CountryApi
 import com.bignerdranch.android.weatherapplication.databinding.ItemCountryBinding
-import com.bignerdranch.android.weatherapplication.data.models.Country
+import com.bumptech.glide.Glide
 
-class CountryListAdapter() :
+class CountryListAdapter(val countryItemClickListener: CountryItemClickListener) :
     RecyclerView.Adapter<CountryListAdapter.MyViewHolder>() {
 
-    private val data = mutableListOf<Country>()
+    private val data = mutableListOf<CountryApi>()
 
-    fun addCountry( coins : List<Country>){
-        data.addAll(coins)
+    fun addCountry(countries: List<CountryApi>) {
+        data.addAll(countries)
         //todo notifyItemRangeInserted
         notifyDataSetChanged()
     }
 
-    class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val binding = ItemCountryBinding.bind(itemView)
 
-        fun updateCountry(country: Country) {
-            binding.imageView.setImageResource(country.imageResId)
-            binding.tvCountry.text = country.countryName
-            binding.tvCapital.text = country.capitalName
+        fun updateCountry(country: CountryApi) {
+            binding.imageView.setImageURI(country.flagUrl.flagURL.toUri())
+            binding.tvCountry.text = country.countryName.name
+            binding.tvCapital.text = country.capitalName.toString()
+
+            country.flagUrl.flagURL.toUri().let {
+                Glide
+                    .with(binding.imageView.context)
+                    .load(it)
+                    .into(binding.imageView)
+            }
 
             binding.clItem.setOnClickListener {
-//                countryListItemClickListener.invoke(country)
+                countryItemClickListener.onCountryClicked(country)
             }
         }
     }
@@ -48,5 +57,7 @@ class CountryListAdapter() :
     override fun getItemCount(): Int {
         return data.size
     }
-
 }
+
+//for converting String to Uri
+private fun String.toUri(): Uri = Uri.parse(this)

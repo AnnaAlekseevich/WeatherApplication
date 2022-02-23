@@ -4,11 +4,13 @@ import com.google.gson.annotations.SerializedName
 
 data class CountryApi(
 
-    @SerializedName("currencies")
-    val currencies: List<Currencies>,
-    @SerializedName("name")
-    val name: String,
     @SerializedName("capital")
-    val capital: String
+    val capitalName: List<String>,
+
+    @SerializedName("name")
+    val countryName: CountryName,
+
+    @SerializedName("flags")
+    val flagUrl: Flag
 
 )
