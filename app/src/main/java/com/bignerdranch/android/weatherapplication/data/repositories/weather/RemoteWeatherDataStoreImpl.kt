@@ -16,4 +16,8 @@ class RemoteWeatherDataStoreImpl @Inject constructor(private val apiWeather: Api
         return apiWeather.getWeather(lat = lat, lon = lon, part = exclude, apiKey = appId).body()
     }
 
+    override suspend fun getExampleResponse(appId: String): WeatherResponseData? {
+        return apiWeather.getWeather(apiKey = appId).body()
+    }
+
 }

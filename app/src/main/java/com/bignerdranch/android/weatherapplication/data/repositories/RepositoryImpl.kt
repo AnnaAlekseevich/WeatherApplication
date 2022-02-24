@@ -39,5 +39,9 @@ class RepositoryImpl @Inject constructor(
         return weatherDataStore.getTemp(lat = lat, lon = lon, exclude = exclude, appId = appId)
     }
 
+    override suspend fun getExampleResponse(appId: String): WeatherResponseData? {
+        return weatherDataStore.getExampleResponse(appId = appId)
+    }
+
 
 }

@@ -18,4 +18,6 @@ interface Repository {
         exclude: String,
         appId: String
     ): WeatherResponseData?
+
+    suspend fun getExampleResponse(appId: String): WeatherResponseData?
 }

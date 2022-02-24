@@ -17,4 +17,6 @@
     <string name="btn_button_two">Two</string>
     <string name="btn_button_three">Three</string>
     <string name="weather">Current temperature</string>
+    <string name="go_to_filters">Go to filters</string>
+    <string name="filters">Filters</string>
 </resources>

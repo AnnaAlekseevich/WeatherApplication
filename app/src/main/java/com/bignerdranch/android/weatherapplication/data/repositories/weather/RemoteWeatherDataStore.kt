@@ -11,4 +11,6 @@ interface RemoteWeatherDataStore {
         appId: String
     ): WeatherResponseData?
 
+    suspend fun getExampleResponse(appId: String): WeatherResponseData?
+
 }
